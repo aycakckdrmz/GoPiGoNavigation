@@ -1,0 +1,244 @@
+<html>
+<head>
+    <title>User</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="functions.js"></script>
+</head>
+<img src="pictures/GoPiGo.png" alt="GoPiGo Top" style="width:100%;height:300px;">
+<div class="center">
+<body>
+<table>
+    <tr>
+        <td style="width:20%;">
+            <form method="get" action="index.html">
+                <button type="submit">Home</button>
+            </form>
+        </td>
+        <td style="width:20%;">
+            <form method="get" action="setup.html">
+                <button type="submit">Setup</button>
+            </form>
+        </td>
+        <td style="width:20%;">
+            <form method="get" action="about.html">
+                <button type="submit">About Us</button>
+            </form>
+        </td>
+        <td style="width:20%;">
+            <form method="get" action="technical.html">
+                <button type="submit">Technical Maual</button>
+            </form>
+        </td>
+        <td style="width:20%;">
+            <form method="get" action="user.html">
+                <button type="submit">User Maual</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<h1> User Manual </h1>
+<table>
+        <tr>
+            <td colspan ="2";>Here ia a short introduction on how to get started on python and the GoPiGp robot.</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+             <td>
+                <ul>
+                    <li><font size="4">First start up IDLE as your work environment.</font></li>
+                    <li><font size="4">Then choose Python two because it is the default setup.</font></li>
+                    <li><font size="4">Then it will bring up the Python shell where we can do some live coding. this is where we enter lines of codes and they get run right away.</font></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan ="2";>The first line to enter is as follows:</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+                >>> from gopigo import * and press enter.
+                <br/>
+                This code of line means we want the shell to get the GoPiGo library and make it avaiable to us. GoPiGo library is a toolbox with all the GoPiGo related commands. * means we want everything from that toolbox. at this point we are just making sure we have required tools. we have not asked the GoPiGo to do anything yet.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan ="2";>To make it move forward</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+                Enter the following line of code.<br/>
+                Note: Put your GoPiGo upside down as we do not want it to go off roaming. Now let's make it go forward.<br/>
+                >>>forward()<br/>
+                Press enter and watch GoPiGO go.     
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan ="2";>To make it stop</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+                Enter the following line of code.<br/>
+                >>>stop()<br/>
+                Press enter and watch GoPiGO stop.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan ="2";>To make it turn left</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+            Enter the following line of code.<br/>
+                >>>left()<br/>
+                Press enter and watch GoPiGO turn left.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan ="2";>To make it turn right</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+            Enter the following line of code.<br/>
+                >>>right()<br/>
+                Press enter and watch GoPiGO turn right.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+                <br/>
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan ="2";>To make it go backwards</td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+            Enter the following line of code.<br/>
+                >>>backward()<br/>
+                Press enter and watch GoPiGO go backwards.
+            </td>
+        </tr>
+        <tr>
+            <td>
+            
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+            We can now control our GoPiGo via live coding. This is fun but if we want to creat more advanced programs we do not want to type all each time. so we need to be able to save the program in a file. to do so follow the steps below.
+            <ul>
+                    <li><font size="4">Go to file and then click on new file to get file editor.</font></li>
+                    <li><font size="4">The first line needs to be same as before.<br/>
+                    >>>from gopigo import *<br/>
+                    Then press enter.<br/>
+                    Then type forward()<br/>
+                    Notice nothing happened. it is because code is not run yet.</font></li>
+                    <li><font size="4">Now let's get all the commands typed up as follows:<br/>
+                    >>>left()<br/>
+                    >>>right()<br/>
+                    backward()<br/>
+                    stop()<br/>
+                    Then save the file and give the filename as preffered.</font></li>
+                </ul>
+            </td>
+        </tr>
+         <tr>
+            <td>
+            
+                <br/>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:2%;"></td>
+            <td>
+            Now that the file is saved to disk , we can try to run it.<br/>
+            To run we can simply click Run option and then click Run module, or just press F5 on the keyboard.<br/>
+            When we run the code python will take us to the shell where we did our live coding.<br/>
+            Note: note happened when we run it. This is because python is increadibly fast and in this case GoPiGo received and executed all the commands ending with stop command.
+            </td>
+        </tr>
+         <tr>
+            <td>
+            
+                <br/>
+            </td>
+        </tr>
+         <tr>
+            <td style="width:2%;"></td>
+            <td>
+           So next we have to go back to our code and import sleep function from another library that has to do with time.<br/>
+           Note: We can import everything in that library using *<br/>
+           So the command for that is as follows:<br/>
+           >>>from time import sleep
+            </td>
+        </tr>
+         <tr>
+            <td>
+            
+                <br/>
+            </td>
+        </tr>
+         <tr>
+            <td style="width:2%;"></td>
+            <td>
+            Now we can put some sleep commands, which are similar to wait block in scratch. So our line of code should looks as follows after adding sleep:<br/>
+                forward()<br/>
+                sleep(1)<br/>
+                left()<br/>
+                sleep(0.5)<br/>
+                right()<br/>
+                sleep(0.5)<br/>
+                backward()<br/>
+                sleep(2)<br/>
+                stop()<br/><br/>
+                Note the value inside the prenthesis which actually determines the number of seconds that sleep should last. Thses values are passed on to function which we also called them arguement, and each arguement is different for each function.
+                Save the modified file and hit F5 key on keyboard to run it. We should be able see choreography on our GoPiGo performing all the command that we gave through our file.
+            </td>
+        </tr>
+    </table>
+</body>
+</div>
+</html>

@@ -74,11 +74,3 @@ def aStarSearch(graph, start, goal):
                 frontier.put(next, priority)
                 cameFrom[next] = current
 
-    return cameFrom
-
-#example = graph(10, 10)
-#testStart = (0, 0)
-#testGoal = (5, 4)
-
-#(pathway, _ ) = aStarSearch(example, testStart, testGoal)
-#print(reconstructPath(pathway, testStart, testGoal))

@@ -1,0 +1,129 @@
+<html>
+<head>
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="functions.js"></script>
+</head>
+<table>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shAbstract();" style="width:25% !important;">Abstract</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myAbstract">
+                The proliferation of mapping technology has created a market for vehicles that are capable of self-navigation. In fact, what started as the sole enterprise of the single largest data aggregator in the world has evolved into an ever changing, progressing field. Our project aims to take the concepts being developed by companies like Google and Uber and implement them on a much smaller, safer scale while simultaneously serving as a method to learn about these algorithms as well as how to interact with the world using a computer system. In this context, we developed a small-scale self-navigating car using a Raspberry Pi and the GoPiGo bots, capable of finding an optimal path and adjusting its path to avoid obstacles.
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shIntroduction();" style="width:25% !important;">Introduction</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myIntroduction">
+                The Raspberry Pi Foundation is a United Kingdom based organization whose mission statement it is to further open the platform of computer development to people of all ages. In aligning themselves with this goal, they have produced a micro-computer called the Raspberry Pi, a sub-$40 computer with output pins to allow the computer to interact with other electronic devices. This has made it a huge part in the Maker community, offering hobbyists and  newbies alike an affordable way to experiment and create new methods of human-computer interactive systems.
+                With this further proliferation, many technologies have been released specifically tailored to the Pi, and among these is the GoPiGo platform, a method of creating a mobile, drivable unit. Using the combination of these two technologies, along with the standard platform in computer vision technology – OpenCV – as well as many popular algorithms in graph searching and edge/object detection, we’ve developed a methodology for emulating the experimental    self-driving cars of Google, Uber, and the like.
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shASearch();" style="width:25% !important;">A * Search</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myASearch">
+                This is my DIV element.
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shTechnology();" style="width:25% !important;">Technology</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myTechnology">
+                <ul>
+                    <li>Raspberry Pi</li>
+                    <li>GoPiGo Bot</li>
+                    <li>Python</li>
+                    <li>OpenCV</li>
+                    <li> A* Search Algorithm</li>
+                    <li>Canny Edge Detection</li>
+                </ul>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shObstacle();" style="width:25% !important;">Open CV and Obstacle Detection</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myObstacle">
+                Having a computer "see" is a very complex and computationally expensive process. To help mitigate this problem, we utilized a technology called “OpenCV”, where the CV stands for “Computer Vision”. This is an open source library to contains many common operations used in computer vision tasks, which are optimized much more than we would be able to produce at an undergraduate level.
+                One of these algorithms that we used is known as “Canny Edge Detection”. This is an algorithm that takes an image as an input and returns an image that is black everywhere except where the algorithm has detected an edge. In general, it works by applying a Gaussian Filter to the image in order to blur the image (within a certain threshold to simplify the image’s color complexity), calculating intensity gradients (to quantify how quickly the image is changing colors), applying a threshold (to identify lines along which the colors significantly change fast enough to likely indicate an edge), then pare down the results in order to more clearly define where the edges are.
+                Using this algorithm along with some probabilistic inferencing, we can predict a collision with a visible object. When a collision seems imminent, the GoPiGo will then take measures to ensure that it will not collide with the object. In this implementation, the bot randomly decides to take a right or left path way around the object, and will adjust its path accordingly.
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shConclusion();" style="width:25% !important;">Conclusion</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myConclusion">
+                Analysis of the DNA electrophoresis results indicated that the PCR product satisfied our intentions.  This allowed for the continuation of following procedures needed for protein purification.  By inducing the PCR-fused plasmid containing bacteria, the increased expression of the desired protein was made apparent through SDS-PAGE.  Affinity chromatography isolated the GST-GFP from any contaminants present in solution, allowing for further purification to occur.  Spot blotting, made possible through specifically formulated antibody attachment, was used to confirm the presence of our predicted protein of interest, GFP.
+                Through analysis of our second SDS-PAGE and spot blot results, it can be deduced that a higher concentration of glutathione agarose binding beads was needed in order to account for the high amounts of GST-GFP present in the solution.  In future procedures, such erroneous results could also be prevented by the elution of the protein at a lower volume.
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2";>
+            <button onclick="shReferences();" style="width:25% !important;">References</button>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:2%;"></td>
+        <td>
+            <div id="myReferences">
+                <ul>
+                    <li>
+                        Alberts, B., A. Johnson, J. Lewis, M. Raff, K. Roberts, P. Walter.  2008.  Molecular Biology of the Cell, 5th Ed.  New York:  Garland Science, Taylor & Francis Group.  1268 pgs.
+                        </li>
+                        <br/>
+                        <li>
+                        Promega Corporation.  2008. Lambda DNA/EcoRI+ Hind III Markers; Load 1 μL/lane (Figure).  Available: http://www.promega.com/figures/popup.asp?partno=g1731&product=lambda+dna%2fecori+%2b+hindiii+markers&fn=1258tc. Accessed 24 March, 2008.
+                        </li>
+                        <br/>
+                        <li>
+                        Takara Bio Company.  2008.  Available:  http://www.clontech.com/products/detail.asp?product_id=10594&tabno=2  Accessed 2 April, 2008.
+                        
+                        </li>
+                        </ul>
+                        
+                        </div>
+                        </td>
+                        </tr>
+                        
+                        </table>
+</body>
+</html>

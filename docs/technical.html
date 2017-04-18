@@ -1,0 +1,163 @@
+<html>
+<head>
+	<title>Technical Manual</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!--Header-->
+    <img src="pictures/GoPiGo.png" alt="GoPiGo Top" style="width:100%;height:300px;">
+    <div class="center">
+        <body>
+            <table>
+                <tr>
+                    <td style="width:20%;">
+                        <form method="get" action="index.html">
+                            <button type="submit">Home</button>
+                        </form>
+                    </td>
+                    <td style="width:20%;">
+                        <form method="get" action="setup.html">
+                            <button type="submit">Setup</button>
+                        </form>
+                    </td>
+                    <td style="width:20%;">
+                        <form method="get" action="about.html">
+                            <button type="submit">About Us</button>
+                        </form>
+                    </td>
+                    <td style="width:20%;">
+                        <form method="get" action="technical.html">
+                            <button type="submit">Technical Maual</button>
+                        </form>
+                    </td>
+                    <td style="width:20%;">
+                        <form method="get" action="user.html">
+                            <button type="submit">User Maual</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <!----Begining of Technical Documentation-->
+<!----TEST PROGRAM -------------------->
+        <h1> <center> Technical Manual </center> </h1>
+        <table>
+            <tr>
+                <td><h1>Test Program</h1></td>
+            </tr>
+            <tr>
+                <td><h2>Overview: The Test Program enables the user to control the GoPiGo through a series of inputs that control the GoPiGo's movements. This program allows the user to test their GoPiGo's functionality and make sure that all the motors and lights are working properly.'</h2></td>
+            </tr>
+            <tr>
+                <td><code><font color=" dark pink">from </font> gopigo  <font color=" dark pink">import</font> *</code></td>
+            </tr>
+            <tr>
+                <td><h2>Talk about the code here?</h2></td>
+            </tr>
+            
+        </table>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<!----FINAL PROGRAM
+        <table>
+            <tr>
+                <td><h1>Final Program</h1></td>
+            </tr>
+            <tr>
+                <td>Technical documentation for the final program goes here!</td>
+            </tr>
+            <tr>
+                <td  style="height:400px;">
+                    <link href="../FinalProgram.py" rel="stylesheet" type="text/css" />
+                </td>
+            </tr>
+            <tr>
+                <td><h2>Overview: This program incorporates several different funtions to enable the GoPiGo to perform a series of commands that allow it to navigate the Science Wing at Concord University.</h2></td>
+            </tr>
+            <tr>
+                <td>Functions:
+                    <ul>
+                        <li>gopigo import</li>
+                        <ul>
+                            <li>This import contains the functionality needed to control the GoPiGo. This will be needed at the begining of every GoPiGo program.</li>
+                        </ul>
+                        <li>import sys</li>
+                            <ul>
+                                <li>This import allows the user to close running programs.</li>
+                            </ul>
+                        <li>raw_input()</li>
+                            <ul>
+                                <li>Grabs user input from the keyboard.</li>
+                            </ul>
+                        
+                        <li>fwd()</li>
+                            <ul>
+                                <li>Moves both motors forward.</li>
+                            </ul>
+                        <li>left()</li>
+                            <ul>
+                                <li>Moves the right motor forward causing the GoPiGo to turn to the left.</li>
+                            </ul>
+                        <li>right()</li>
+                            <ul>
+                                <li>Moves the left motor forward causing the GoPiGo to turn to the right.</li>
+                            </ul>
+                        <li>bwd()</li>
+                            <ul>
+                                <li>Moves both motors backward.</li>
+                            </ul>
+                        <li>stop()</li>
+                            <ul>
+                                <li>Stops both motors.</li>
+                            </ul>
+                        <li>sys.exit()</li>
+                            <ul>
+                                <li>Exits the program.</li>
+                            </ul>
+                        <li>time.sleep(int time_interval)</li>
+                            <ul>
+                                <li>Makes the system wait a time interval before continuing to the next system call.</li>
+                            </ul>
+                        <li> enable_encoders()</li>
+                            <ul>
+                                <li>Turns on the encoder. This enables the encoder to detect how far each wheel has moved by detecting the spaces in the plastic cut outs in the plastic opposite the wheels.</li>
+                            </ul>
+                        <li> enc_tgt(int m1 ,int m2,int target)</li>
+                            <ul>
+                                <li>m1: 0 disables targeting for motor 1 and 1 enables targeting</li>
+                                <li>m2: 0 disables targeting for motor 2 and 1 enables targeting</li>
+                                <li>target: this integer is how far each motor should turn the wheels. 18 is a complete rotation.</li>
+                            </ul>
+                    </ul>
+                    <td>
+                        </tr>
+            <tr>
+                <td>Tips:
+                    <ul>
+                        <li>My GoPiGo won't go straight:
+                            <ul>
+                                <li>Adjusting the trim on your GoPiGo should help to ensure that your GoPiGo is headed on a straight path.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>GoPiGo doesn't complete a full rotation or goes too far:
+                            <ul>
+                                <li>Try adjusting the plastic encoders with cutouts so that they stay aligned on the GoPiGo axle better.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+ -------------------->
+    </div>
+</body>
+</html>
