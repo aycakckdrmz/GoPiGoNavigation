@@ -10,7 +10,7 @@ body
 
 table, th, td {
     --border: 1px solid black;
-    vertical-align: center;
+    --vertical-align: center;
     text-align: left;
 }
 table, tr{
@@ -32,13 +32,15 @@ button {
     text-shadow:   none;
     width:         100%;
 }
+
+
 object{
     width:         100%;
-    height:        100%;
+    height:        850px;
     background-color: white;
-    border: 10px ridge #CCC;
+    --border: 10px ridge #CCC;
+    vertical-align:top;
 }
-
 
 
 .center {
@@ -47,11 +49,42 @@ object{
     padding: 10px;
 }
 
-
-
-code{
-    background-color:white;
-    width:100%;
-    height:100%;
-    border: 3px solid #8A2432;
+#Setup {
+    display:none;
+}
+#Syntax {
+    display:none;
+}
+#Variables {
+    display:none;
+}
+#Functions {
+    display:none;
+}
+#Algorithms {
+    display:none;
+}
+#Requirements {
+    display:none;
+}
+#Systems {
+    display:none;
+}
+#Hardware {
+    display:none;
+}
+#DeviceUsage {
+    display:none;
+}
+#Controls {
+    display:none;
+}
+#Capabilities {
+    display:none;
+}
+#Bugs {
+    display:none;
+}
+#FutureDevelopment {
+    display:none;
 }
