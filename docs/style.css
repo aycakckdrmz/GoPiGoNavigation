@@ -48,7 +48,9 @@ object{
     width: 90%;
     padding: 10px;
 }
-
+#Introduction {
+    display:none;
+}
 #Setup {
     display:none;
 }
