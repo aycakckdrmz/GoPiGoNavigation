@@ -3,11 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>future</title>
+<title>Hello!</title>
 <link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
-<body><div class="container"><h1 id="future-development-ideas"><strong><em>Future Development Ideas</em></strong></h1>
+<body><div class="container"><h1 id="future-development-ideas">Future Development Ideas</h1>
 
-<hr></div></body>
+<hr>
+
+
+
+<h2 id="opencv-and-obstacle-detection">OpenCV and Obstacle Detection</h2>
+
+<pre><code>Having a computer “see” is a very complex and computationally expensive process. To help mitigate this problem, we utilized a technology called “OpenCV”, where the CV stands for “Computer Vision”. This is an open source library to contains many common operations used in computer vision tasks, which are optimized much more than we would be able to produce at an undergraduate level.
+One of these algorithms that we used is known as “Canny Edge Detection”. This is an algorithm that takes an image as an input and returns an image that is black everywhere except where the algorithm has detected an edge. In general, it works by applying a Gaussian Filter to the image in order to blur the image (within a certain threshold to simplify the image’s color complexity), calculating intensity gradients (to quantify how quickly the image is changing colors), applying a threshold (to identify lines along which the colors significantly change fast enough to likely indicate an edge), then pare down the results in order to more clearly define where the edges are.
+Using this algorithm along with some probabilistic inferencing, we can predict a collision with a visible object. When a collision seems imminent, the GoPiGo will then take measures to ensure that it will not collide with the object. In this implementation, the bot randomly decides to take a right or left path way around the object, and will adjust its path accordingly.
+</code></pre>
+
+<blockquote>
+  <p><strong>Note:</strong></p>
+  
+  <p></p><ul> <br>
+  <li>The GoPiGo may will not be able to detect objects  at long distances so detecting objects will need to be done in close ranges <br></li>
+  
+
+    <li>the battery degredation will also play a large role in determining the</li>
+    </ul><p></p>
+    
+  </blockquote>
+</blockquote></div></body>
 </html>
