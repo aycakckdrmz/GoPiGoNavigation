@@ -1,3 +1,5 @@
+#Defines aspects of the map such as its size and any obstacles.
+
 class graph:
     def __init__(self, width, height):
         self.width = width
@@ -22,6 +24,8 @@ class graph:
 
     def cost(self, from_node, to_node):
         return self.weights.get(to_node, 1)
+
+#Creates a visual representation of the map used by the GoPiGo.
 
 def drawGraph(graph, start, goal, path):
 	for j in range(graph.height):

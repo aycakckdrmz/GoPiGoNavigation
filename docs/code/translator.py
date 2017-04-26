@@ -1,8 +1,14 @@
+import astar
 import constants
 import graph
-import astar
 
-def translate(pathway, startingDirection=constants.NORTH):
+'''
+Takes the graph and astar algorithim and determines the
+directions to follow. These directions are passed to be
+main to be translated into GoPiGo commands.
+'''
+
+def translate(pathway, startingDirection = constants.NORTH):
     directions = []
     facing = startingDirection
     forwardLength = 0
@@ -12,7 +18,7 @@ def translate(pathway, startingDirection=constants.NORTH):
         (x2, y2) = pathway[i+1]
 
         if (x2 == x1+1):
-            #go right
+            #Right turn logic.
             if (facing == constants.EAST):
                 forwardLength += 1
                 
@@ -29,7 +35,7 @@ def translate(pathway, startingDirection=constants.NORTH):
                 facing = constants.EAST
 
         elif (x2 == x1-1):
-            #go left
+            #Left turn logic.
             if (facing == constants.WEST):
                 forwardLength += 1
                 
@@ -46,7 +52,7 @@ def translate(pathway, startingDirection=constants.NORTH):
                 facing = constants.WEST
             
         elif (y2 == y1+1):
-            #forward
+            #Forward logic.
             if (facing == constants.NORTH):
                 forwardLength += 1
                 
@@ -63,7 +69,7 @@ def translate(pathway, startingDirection=constants.NORTH):
                 facing = constants.NORTH
 
         elif (y2 == y1-1):
-            #backward
+            #Backward logic. Note this should never happen(?)
             if (facing == constants.SOUTH):
                 forwardLength += 1
                 
