@@ -1,5 +1,5 @@
 //show hide Abstract part
-var list = ["Introduction", "Setup","Syntax","Variables","Functions","Algorithms","Requirements","Systems","Hardware","DeviceUsage","Controls","Capabilities","Bugs","FurtureDevelopment"];
+var list = ["Introduction", "Setup","Syntax","Variables","Functions","Algorithms","Requirements","Systems","Hardware","DeviceUsage","Controls","Capabilities","Bugs","FutureDevelopment"];
 
 function sh(s) {
      var i = 0;
