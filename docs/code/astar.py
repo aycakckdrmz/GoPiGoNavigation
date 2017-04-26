@@ -1,5 +1,7 @@
-import heapq
 import graph
+import heapq
+
+#Graph is passed in and shortest path is determined by its properties.
 
 class PriorityQueue:
     def __init__(self):
