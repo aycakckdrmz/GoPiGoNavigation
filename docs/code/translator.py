@@ -4,7 +4,7 @@ import graph
 
 '''
 Takes the graph and astar algorithim and determines the
-directions to follow. These directions are passed to be
+directions to follow. These directions are passed to the
 main to be translated into GoPiGo commands.
 '''
 
