@@ -8,7 +8,6 @@ import graph
 import sys
 import translator
 
-
 #Establish starting position, goal position, and locations of obstacles.
 
 ourMap = graph.graph(80, 80)
