@@ -9,5 +9,208 @@
 </head>
 <body><div class="container"><h1 id="syntax-and-semantics"><strong>Syntax and Semantics</strong></h1>
 
-<hr></div></body>
+<hr>
+
+
+
+<h2 id="classes-and-functions">Classes and Functions</h2>
+
+<blockquote>
+  <h4 id="1-graph"><strong>(1) graph</strong></h4>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-keyword">import</span> heapq
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">graph</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height)</span>:</span> 
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">in_bounds</span><span class="hljs-params">(self, id)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">passable</span><span class="hljs-params">(self, id)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">neighbors</span><span class="hljs-params">(self, id)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cost</span><span class="hljs-params">(self, from_node, to_node)</span>:</span>
+        (...)</code></pre>
+
+<blockquote>
+  <p><strong>(1.1)  init</strong>  -  init function for class graph intances </p>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-comment"># _new_=regularconst vs _init_ =+ add-on manip. before creat.</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, width, height)</span>:</span> 
+        self.width = width
+        self.height = height
+        self.walls = []         <span class="hljs-comment"># [] &gt; list </span>
+        self.weights = {}       <span class="hljs-comment"># {} &gt; dic['key' : 'value']- no dublicates </span>
+</code></pre>
+
+<blockquote>
+  <p><strong>(1.2)  in_bounds</strong>  -  checks a location if it is in the bounds or not  </p>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-comment">#checks if any pair of x,y is within our map/limits</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">in_bounds</span><span class="hljs-params">(self, id)</span>:</span>
+        (x, y) = id
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> &lt;= x &lt; self.width <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= y &lt; self.height</code></pre>
+
+<blockquote>
+  <p><strong>(1.3) passable</strong>  -  checks a location if it is clear to move </p>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-comment"># checks and return true if param location has no obsticle on the way</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">passable</span><span class="hljs-params">(self, id)</span>:</span>
+        <span class="hljs-keyword">return</span> id <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> self.walls</code></pre>
+
+<blockquote>
+  <p><strong>(1.4)  neighbors</strong>  - returns available adjacent locations</p>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-comment"># returns all available adjacent (x,y) --in map and no walls</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">neighbors</span><span class="hljs-params">(self, id)</span>:</span>
+        (x, y) = id
+        results = [(x+<span class="hljs-number">1</span>, y), (x, y-<span class="hljs-number">1</span>), (x-<span class="hljs-number">1</span>, y), (x, y+<span class="hljs-number">1</span>)]
+        <span class="hljs-keyword">if</span> (x + y) % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>: results.reverse()
+        results = filter(self.in_bounds, results)
+        results = filter(self.passable, results)
+        <span class="hljs-keyword">return</span> results
+
+</code></pre>
+
+<blockquote>
+  <p><strong>(1.5) cost</strong>   -  scales the effort between locations</p>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-comment"># scales the effort to go from point A to B</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cost</span><span class="hljs-params">(self, from_node, to_node)</span>:</span>
+        <span class="hljs-keyword">return</span> self.weights.get(to_node, <span class="hljs-number">1</span>)
+</code></pre>
+
+<p>-</p>
+
+<blockquote>
+  <h4 id="2-priorityqueue"><strong>(2) PriorityQueue</strong></h4>
+</blockquote>
+
+
+
+<pre class="prettyprint"><code class="language-python hljs "> <span class="hljs-keyword">import</span> heapq
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PriorityQueue</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">empty</span><span class="hljs-params">(self)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put</span><span class="hljs-params">(self, item, priority)</span>:</span>
+        (...)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self)</span>:</span>
+        (...)</code></pre>
+
+<blockquote>
+  <p><strong>(2.1) init </strong> - init function for class PriorityQueues intances </p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.elements = []
+</code></pre>
+
+<blockquote>
+  <p><strong>(2.) empty  </strong> - returns true if queue is empty </p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> len(self.elements) == <span class="hljs-number">0</span></code></pre>
+
+<blockquote>
+  <p><strong>(2.) put</strong> - returns true if the queue empty </p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs ">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put</span><span class="hljs-params">(self, item, priority)</span>:</span>
+        heapq.heappush(self.elements, (priority, item))
+</code></pre>
+
+
+
+<h2 id="other-functions">Other Functions</h2>
+
+<blockquote>
+  <p><strong>reconstructPath</strong></p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reconstructPath</span><span class="hljs-params">(came_from, start, goal)</span>:</span>
+    current = goal
+    path = [current]
+    <span class="hljs-keyword">while</span> current != start:
+        current = came_from[current]
+        path.append(current)
+    path.reverse()</code></pre>
+
+<blockquote>
+  <p><strong>heuristic</strong></p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heuristic</span><span class="hljs-params">(a, b)</span>:</span>
+    (x1, y1) = a
+    (x2, y2) = b
+    <span class="hljs-keyword">return</span> abs(x1 - x2) + abs(y1 - y2)</code></pre>
+
+<blockquote>
+  <p><strong>aStarSearch</strong></p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">aStarSearch</span><span class="hljs-params">(graph, start, goal)</span>:</span>
+    frontier = PriorityQueue()
+    frontier.put(start, <span class="hljs-number">0</span>)
+    cameFrom = {}
+    costSoFar = {}
+    cameFrom[start] = <span class="hljs-keyword">None</span>
+    costSoFar[start] = <span class="hljs-number">0</span>
+
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> frontier.empty():
+        current = frontier.get()
+
+        <span class="hljs-keyword">if</span> current == goal:
+            <span class="hljs-keyword">break</span>
+
+        <span class="hljs-keyword">for</span> next <span class="hljs-keyword">in</span> graph.neighbors(current):
+            newCost = costSoFar[current] + graph.cost(current, next)
+            <span class="hljs-keyword">if</span> next <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> costSoFar <span class="hljs-keyword">or</span> newCost &lt; costSoFar[next]:
+                costSoFar[next] = newCost
+                priority = newCost + heuristic(goal, next)
+                frontier.put(next, priority)
+                cameFrom[next] = current
+
+    <span class="hljs-keyword">return</span> cameFrom, costSoFar</code></pre>
+
+<blockquote>
+  <p><strong>A test run:</strong> </p>
+</blockquote>
+
+<pre class="prettyprint"><code class="language-python hljs ">example = graph(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>)
+testStart = (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+testGoal = (<span class="hljs-number">5</span>, <span class="hljs-number">4</span>)
+
+(pathway, _ ) = aStarSearch(example, testStart, testGoal)
+print(reconstructPath(pathway, testStart, testGoal))
+
+</code></pre></div></body>
 </html>
